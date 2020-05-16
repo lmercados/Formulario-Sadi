@@ -1,32 +1,80 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+ <v-app>
+  <!-- App.vue -->
+
+    
+    <v-navigation-drawer
+      v-model="drawer"
+      absolute
+      temporary
+      app
+    >
+      <v-list-item>
+        <v-list-item-avatar>
+          <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
+        </v-list-item-avatar>
+
+        <v-list-item-content>
+          <v-list-item-title>Luis Mercado</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-divider></v-divider>
+
+      <v-list dense>
+
+        <v-list-item
+          v-for="item in items"
+          :key="item.title"
+          link
+        >
+          <v-list-item-icon >
+            <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-icon>
+           <v-list-item-content>
+            <v-list-item-title> <router-link
+                 style="text-decoration: none; color: inherit;"
+                  :to="{ name: 'Retirar'}">{{ item.title }}</router-link></v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+  <v-app-bar app class="error">
+    <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+  </v-app-bar>
+
+  <!-- Sizes your content based upon application components -->
+  <v-content>
+
+    <!-- Provides the application the proper gutter -->
+    <v-container fluid >
+
+      <!-- If using vue-router -->
+      <router-view></router-view>
+    </v-container>
+  </v-content>
+
+  <v-footer app class="error">
+    <!-- -->
+  </v-footer>
+</v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
 
-#nav {
-  padding: 30px;
-}
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+export default {
+  name: 'App',
+  data: () => ({
+        drawer: null,
+        items: [
+          { title: 'Retirar Transformador', icon: 'note_add' },
+          { title: 'Evaluar Transformador', icon: 'build'},
+        ],
+      }),
+   components: {
+   
+  },
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+};
+</script>
