@@ -40,7 +40,7 @@ export default {
       menu2: false,
       
     }),
-   props:['Title'],
+   props:['title'],
       methods: {
       
   }

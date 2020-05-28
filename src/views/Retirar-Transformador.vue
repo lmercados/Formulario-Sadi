@@ -10,7 +10,7 @@
               <v-card class="mb-12">
                 <v-row class="ma-6">
                   <v-col cols="12" xs12 md="4">
-                    <datePicker solo picker="Fecha de Reposición"></datePicker>
+                    <datePicker solo title="Fecha de Reposición"></datePicker>
                   </v-col>
                   <v-col
                     cols="12"
@@ -272,7 +272,7 @@ export default {
   }),
 
   methods: {
-    ...mapMutations(["picker"]),
+   
     validate() {
       this.$refs.form.validate();
     },

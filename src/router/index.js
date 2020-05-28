@@ -17,6 +17,33 @@ const routes = [{
         // which is lazy-loaded when the route is visited.
         component: () =>
             import ( /* webpackChunkName: "about" */ '../views/Retirar-Transformador.vue')
+    },
+    {
+        path: '/Solicitar-Solicitud',
+        name: 'Solicitar',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () =>
+            import ( /* webpackChunkName: "about" */ '../views/Solicitar-Solicitud.vue')
+    },
+    {
+        path: '/Atender-Solicitud',
+        name: 'Atender',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () =>
+            import ( /* webpackChunkName: "about" */ '../views/Atender-Solicitud.vue')
+    },
+    {
+        path: '/Historial-Solicitud',
+        name: 'Historial',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () =>
+            import ( /* webpackChunkName: "about" */ '../views/Historial-Solicitud.vue')
     }
 ]
 
