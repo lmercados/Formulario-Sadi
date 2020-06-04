@@ -60,7 +60,8 @@ export default {
       { title: "Evaluar Transformador", icon: "build",name:'Solicitar' },
       { title: "Solicitar Solicitud", icon: "send",name:'Solicitar' },
        { title: "Atender Solicitud", icon: "check",name:'Atender' },
-       { title: "Historial Solicitud", icon: "search",name:'Historial' }
+       { title: "Historial Solicitud", icon: "search",name:'Historial' },
+       { title: "Registrar Usuario", icon: "search",name:'Registrar' }
     ]
   }),
   components: {}

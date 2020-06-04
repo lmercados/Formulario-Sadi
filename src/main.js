@@ -6,21 +6,24 @@ import vuetify from './plugins/vuetify';
 var firebase = require("firebase/app");
 
 
-require("firebase/firestore");
+//require("firebase/firestore");
 Vue.config.productionTip = false
+    // Your web app's Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyCT7KdBWBUVQYQCuvFfMoSqIIdoNaCXRY4",
-    authDomain: "sadi-248501.firebaseapp.com",
-    databaseURL: "https://sadi-248501.firebaseio.com",
-    projectId: "sadi-248501",
-    storageBucket: "sadi-248501.appspot.com",
-    messagingSenderId: "726217112585",
-    appId: "1:726217112585:web:919aafcc759816a6b00cd8"
+    apiKey: "AIzaSyBYN_YSPHvBw93KdQ632wpZc5_Q9UvUoIU",
+    authDomain: "sadi-9be6e.firebaseapp.com",
+    databaseURL: "https://sadi-9be6e.firebaseio.com",
+    projectId: "sadi-9be6e",
+    storageBucket: "sadi-9be6e.appspot.com",
+    messagingSenderId: "101473492496",
+    appId: "1:101473492496:web:b543f8a8f5eb3c8b5e7495"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-export default firebaseApp.firestore()
+
+
+//const firebaseApp = firebase.initializeApp(firebaseConfig);
+//export default firebaseApp.firestore()
 new Vue({
     router,
     store,
