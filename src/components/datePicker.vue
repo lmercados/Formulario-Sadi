@@ -13,7 +13,7 @@
         <template v-slot:activator="{ on }">
           <v-text-field
             v-model="date"
-            v-bind:label='Title'
+            v-bind:label='title'
             prepend-icon="event"
             readonly
             v-on="on"

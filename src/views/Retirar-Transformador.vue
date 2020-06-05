@@ -10,7 +10,7 @@
               <v-card class="mb-12">
                 <v-row class="ma-6">
                   <v-col cols="12" xs12 md="4">
-                    <datePicker solo title="Fecha de Reposición"></datePicker>
+                    <datePicker  title="Fecha de Reposición"></datePicker>
                   </v-col>
                   <v-col
                     cols="12"
@@ -21,7 +21,7 @@
                   >
                     <v-text-field
                       v-if="datos_g.tipo==1"
-                      solo
+                      outlined
                       ml-3
                       v-model="datos_g.model[index]"
                       :label="datos_g.name"
@@ -49,7 +49,7 @@
                   <v-col cols="12" xs12 md="4" v-for="(tr_r,indexr) in tr_retirar" :key="indexr">
                     <v-text-field
                       v-if="tr_r.tipo==1"
-                      solo
+                      outlined
                       ml-3
                       v-model="tr_r.model[indexr]"
                       :label="tr_r.name"
@@ -76,7 +76,7 @@
                       :key="texto_p.name[indext_posicion]"
                     >
                       <v-text-field
-                        solo
+                        outlined
                         class="mx-5"
                         v-model="texto_p.model[indext_posicion]"
                         :label="texto_p.name"
@@ -104,7 +104,7 @@
                 <v-row class="ma-6">
                   <v-col cols="12" xs12 md="4" v-for="(tr_i,indexi) in tr_instalar" :key="indexi">
                     <v-text-field
-                      solo
+                      outlined
                       :disabled="tr_i.disabled"
                       ml-3
                       v-model="tr_i.model[indexi]"
@@ -117,7 +117,7 @@
                       <v-card-title>Agregar Materiales</v-card-title>
                       <v-col cols="12">
                         <v-select
-                          solo
+                          outlined
                           :items="data_materiales"
                           v-model="material"
                           label="Seleccione el Material"

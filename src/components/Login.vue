@@ -3,7 +3,7 @@
     <v-row color="transparent" class="alto justify-center">
       <v-col xs="12" md="6">
         <v-card>
-          <v-card-title class="headline">SADI {{step}}</v-card-title>
+          <v-card-title class="headline">SADI</v-card-title>
           <v-card-subtitle class="title">Crear tu cuenta de SADI</v-card-subtitle>
           <v-stepper v-model="step">
             <v-card-text>
@@ -52,13 +52,14 @@
                     <p>Usa 8 o más caracteres con una combinación de letras, números y símbolos</p>
                     <v-row>
                       <v-col md="6" class="align-self-center">
-                        <span
-                          class="body-1 blue--text"
-                          v-on:click="modificarStep(3)"
-                        >Acceder a tu Cuenta</span>
+                        <router-link
+                          class="body-1"
+                          style="text-decoration: none; color: blue;"
+                          :to="{ name:'Login'}"
+                        >Acceder a tu cuenta</router-link>
                       </v-col>
                       <v-col md="6" class="align-self-center">
-                        <v-btn class="ml-10" color="primary" @click="modificarStep(2)">Continue</v-btn>
+                        <v-btn class="ml-10" color="primary" @click="step = 2">Continue</v-btn>
                       </v-col>
                     </v-row>
                   </v-stepper-content>
@@ -91,35 +92,33 @@
                           ></v-select>
                         </v-col>
                       </v-row>
-                      <v-btn text @click="modificarStep(1)" class="red--text">Back</v-btn>
-                      <v-btn color="primary" @click="modificarStep(3)">Continue</v-btn>
+                      <v-btn text @click="step = 1" class="red--text">Back</v-btn>
+                      <v-btn color="primary" @click="step = 3">Continue</v-btn>
                     </v-card>
                   </v-stepper-content>
                   <v-stepper-content step="3">
                     <v-card>
                       <v-row>
-                        <v-form @submit.prevent="Logear()">
-                          <v-col cols="12" xs12>
-                            <v-text-field
-                              suffix="@edenorte.com"
-                              v-model="email"
-                              label="Email"
-                              outlined
-                            ></v-text-field>
-                          </v-col>
-                          <v-col cols="12" xs12>
-                            <v-text-field
-                              outlined
-                              ml-3
-                              v-model="password"
-                              type="password"
-                              required
-                              label="Contraseña"
-                            ></v-text-field>
-                          </v-col>
-                          <v-btn color="primary" type="submit">Acceder</v-btn>
-                        </v-form>
+                        <v-col cols="12" xs12>
+                          <v-text-field
+                            suffix="@edenorte.com"
+                            v-model="email"
+                            label="Email"
+                            outlined
+                          ></v-text-field>
+                        </v-col>
+                        <v-col cols="12" xs12>
+                          <v-text-field
+                            outlined
+                            ml-3
+                            v-model="password"
+                            type="password"
+                            required
+                            label="Contraseña"
+                          ></v-text-field>
+                        </v-col>
                       </v-row>
+                      <v-btn color="primary" @click="step = 3">Acceder</v-btn>
                     </v-card>
                   </v-stepper-content>
                 </v-col>
@@ -136,12 +135,12 @@
   </div>
 </template>
 <script>
-import { mapState, mapMutations } from "vuex";
 export default {
   name: "Registrar-Usuario",
   data() {
     return {
       email: "",
+      step: 1,
       show1: false,
       show2: false,
       password: "",
@@ -163,19 +162,13 @@ export default {
         { name: "Puesto", select: { sPuesto: "" }, data: [4, 5, 6] }
       ]
     };
-  },
-  methods: {
-    ...mapMutations(["Logear", "modificarStep"])
-  },
-  computed: {
-    ...mapState(["isLogged", "step"])
   }
 };
 </script>
 <style scoped>
 @media only screen and (min-width: 900px) {
   .alto {
-    margin-top: 150px;
+    margin-top: 180px;
   }
 }
 </style>
